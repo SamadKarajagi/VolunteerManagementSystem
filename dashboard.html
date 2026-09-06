@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizer Dashboard</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="app.js"></script>
+    
+    <style>
+        
+        main { 
+            display: block; 
+            max-width: 1000px; 
+            padding: 30px;
+            margin: 0 auto;
+        }
+        .dashboard-card {
+            max-width: 1000px;
+        }
+        .dashboard-card h3 {
+            color: #004d40;
+            border-bottom: 2px solid #e6f5f5;
+            padding-bottom: 15px;
+            margin-top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .roster-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .roster-table th, .roster-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .roster-table th {
+            background-color: #f0f4f8;
+            color: #004d40;
+            font-size: 0.9em;
+        }
+        .export-btn {
+            background-color: #3498db; 
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+        .export-btn:hover {
+            background-color: #2980b9;
+        }
+        .event-dashboard-item {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ccc;
+        }
+        .qr-code-container {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .qr-code-display {
+            width: 100px; 
+            height: 100px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2><i class="fas fa-chart-line"></i> Organizer Management Dashboard</h2>
+        <button onclick="logoutUser()" class="create-btn" style="position: absolute; top: 10px; right: 10px; padding: 8px 15px; font-size: 0.9em; background-color: #e74c3c;">
+            <i class="fas fa-sign-out-alt"></i> Sign Out
+        </button>
+    </header>
+
+    <main>
+        <div class="dashboard-card card" id="dashboard-content">
+            <div id="events-dashboard-list">
+                <p>Loading events...</p>
+            </div>
+            
+            <a href="index.html" class="create-btn" style="margin-top: 20px;">
+                <i class="fas fa-arrow-left"></i> Back to Hub
+            </a>
+        </div>
+    </main>
+
+    <footer>&copy; 2025 BGMIT Volunteer Hub</footer>
+
+    <script>
+        // Initialization for the Dashboard
+        document.addEventListener('DOMContentLoaded', checkAuthAndRenderDashboard);
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Hub Access</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Specific styles for the home page layout */
+        .initial-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            background-color: #f4f7f6;
+        }
+        header {
+            margin-bottom: 30px;
+        }
+        .access-buttons {
+            margin-top: 20px;
+        }
+        .access-buttons button {
+            padding: 15px 30px;
+            margin: 0 15px;
+            font-size: 1.1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        #btn-organizer {
+            background-color: #00796b; /* Teal for Organizer */
+            color: white;
+        }
+        #btn-organizer:hover {
+            background-color: #004d40;
+        }
+        #btn-volunteer {
+            background-color: #ff9800; /* Orange for Volunteer */
+            color: white;
+        }
+        #btn-volunteer:hover {
+            background-color: #e68900;
+        }
+        .form-panel {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            margin-top: 40px;
+        }
+        .form-panel input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-panel button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            font-size: 1em;
+        }
+        .hidden {
+            display: none;
+        }
+        .switch-link {
+            display: block;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #00796b;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="initial-screen">
+        <header>
+            <h1>BGMIT Volunteer Hub</h1>
+            <p>Welcome! Please select your role to proceed.</p>
+        </header>
+
+        <div id="selection-buttons" class="access-buttons">
+            <button id="btn-organizer"><i class="fas fa-user-shield"></i> I am an **Organizer**</button>
+            <button id="btn-volunteer"><i class="fas fa-user-plus"></i> I am a **Volunteer**</button>
+        </div>
+
+        <div id="organizer-form-panel" class="form-panel hidden">
+            <h2><i class="fas fa-user-shield"></i> Organizer Sign In</h2>
+            <form id="organizer-signin-form">
+                <input type="text" id="organizer-username" placeholder="Username (e.g., admin)" required>
+                <input type="password" id="organizer-password" placeholder="Password (e.g., 123)" required>
+                <button type="submit" style="background-color: #004d40; color: white;">Sign In</button>
+            </form>
+            <a href="#" id="back-to-selection" class="switch-link">← Back to Role Selection</a>
+        </div>
+
+        <div id="student-form-panel" class="form-panel hidden">
+            <h2><i class="fas fa-user-plus"></i> Volunteer Sign Up</h2>
+            <form id="student-signup-form">
+                <input type="text" id="student-name" placeholder="Full Name" required>
+                <input type="email" id="student-email" placeholder="Email Address" required>
+                <input type="text" id="student-id" placeholder="College ID/Roll No." required>
+                <input type="password" id="student-password" placeholder="Create Password" required>
+                <button type="submit" style="background-color: #ff9800; color: white;">Sign Up and Access Hub</button>
+            </form>
+            <a href="#" id="back-to-selection-2" class="switch-link">← Back to Role Selection</a>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script> 
+
+</body>
+</html>
